@@ -6,8 +6,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ReportsModule } from './reports/reports.module';
-import { User } from './users/user.entity';
-import { Report } from './reports/report.entity';
 import { AppDataSource } from './data-source'; // Import the DataSource configuration
 
 const cookieSession = require('cookie-session');
@@ -46,7 +44,7 @@ export class AppModule {
     consumer
       .apply(
         cookieSession({
-          keys: "faisal",
+          keys: ['faisal'],
         }),
       )
       .forRoutes('*');
